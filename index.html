@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos e E-books - Análise da Personalidade pelos Pés</title>
+    <title>🔥 Black Friday 50% OFF - Cursos e E-books</title>
     <style>
         * {
             margin: 0;
@@ -15,7 +15,8 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* Fundo temático Black Friday */
+            background: #1a1a1a;
         }
 
         .container {
@@ -40,8 +41,11 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
-            mix-blend-mode: multiply;
+            /* Ajuste para logo em fundo escuro */
+            background: white;
+            border-radius: 50%;
+            padding: 10px;
+            box-shadow: 0 5px 25px rgba(255, 255, 255, 0.1);
         }
 
         header h1 {
@@ -56,12 +60,43 @@
             margin-bottom: 15px;
             opacity: 0.95;
             letter-spacing: 1px;
+            color: #f0c400; /* Destaque amarelo */
         }
 
         header p {
             font-size: 1.2em;
             opacity: 0.9;
         }
+
+        /* NOVO: Header de Black Friday */
+        .bf-header {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #f0c400; /* Amarelo Black Friday */
+            background-color: #333;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 30px;
+            border: 2px solid #f0c400;
+            animation: pulse-black 2s infinite;
+        }
+
+        @keyframes pulse-black {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(240, 196, 0, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 10px 20px rgba(240, 196, 0, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(240, 196, 0, 0);
+            }
+        }
+
 
         .secao {
             margin: 40px 0;
@@ -109,17 +144,19 @@
         }
 
         .badge-curso {
+            /* Cor original mantida */
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
         }
 
         .badge-ebook {
+             /* Cor original mantida */
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
         }
 
         .produto-card h2 {
-            color: #667eea;
+            color: #333; /* Cor escura para contrastar com branco */
             font-size: 1.5em;
             margin-bottom: 15px;
             margin-top: 25px;
@@ -132,9 +169,9 @@
             flex-grow: 1;
         }
 
+        /* Botão Padrão (será sobrescrito) */
         .btn-comprar {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 15px 30px;
             text-decoration: none;
@@ -142,35 +179,35 @@
             font-weight: bold;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
 
-        .btn-comprar:hover {
+        /* NOVO: Botão Black Friday */
+        .btn-blackfriday {
+            background: linear-gradient(135deg, #333 0%, #000 100%);
+            box-shadow: 0 4px 15px rgba(240, 196, 0, 0.4);
+            border: 2px solid #f0c400;
+        }
+
+        .btn-blackfriday:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-        }
-
-        .btn-ebook {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
-        }
-
-        .btn-ebook:hover {
-            box-shadow: 0 6px 20px rgba(240, 147, 251, 0.6);
+            background: #f0c400;
+            color: #000;
+            box-shadow: 0 6px 20px rgba(240, 196, 0, 0.6);
+            border-color: #000;
         }
 
         .destaque {
-            border: 3px solid #ffd700;
+            border: 3px solid #f0c400; /* Amarelo */
         }
 
         .destaque::after {
-            content: "⭐ DESTAQUE";
+            content: "⭐ MAIS VENDIDO"; /* Alterado */
             position: absolute;
             top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            background: #ffd700;
-            color: #333;
+            background: #f0c400;
+            color: #000;
             padding: 5px 20px;
             border-radius: 20px;
             font-weight: bold;
@@ -188,7 +225,9 @@
             header h1 {
                 font-size: 2em;
             }
-
+            .bf-header {
+                font-size: 1.5em;
+            }
             .produtos {
                 grid-template-columns: 1fr;
             }
@@ -201,9 +240,13 @@
             <div class="logo">
                 <img src="https://raw.githubusercontent.com/irmoneto/Analisador-Personalidade-Pelos-P-s/main/IMAGENS%20APP/LOGO.jpg" alt="IZN - Análise dos Pés BNV">
             </div>
+            
+            <!-- Título da Black Friday -->
+            <h2 class="bf-header">🔥 OFERTA BLACK FRIDAY 🔥</h2>
+            
             <p class="autor">IRMO ZUCCATO NETO</p>
-            <h1>Meus Cursos e E-books</h1>
-            <p>Análise da Personalidade pelos Pés</p>
+            <h1>Cursos e E-books com 50% de Desconto</h1>
+            <p>Aproveite o cupom <strong>BLACKFRIDAY</strong>! Válido por tempo limitado.</p>
         </header>
 
         <!-- CURSO -->
@@ -214,7 +257,10 @@
                     <span class="tipo-badge badge-curso">CURSO</span>
                     <h2>MÓDULO BÁSICO – ANÁLISE DA PERSONALIDADE PELOS PÉS</h2>
                     <p>Curso completo com toda a base necessária para começar a praticar a análise da personalidade pelos pés de forma profissional. Aprenda através de vídeo-aulas e material didático completo.</p>
-                    <a href="https://chk.eduzz.com/2172958" class="btn-comprar" target="_blank">QUERO ESSE CURSO</a>
+                    <!-- Link e Botão Atualizados -->
+                    <a href="https://sun.eduzz.com/2172958?cupom=BLACKFRIDAY" class="btn-comprar btn-blackfriday" target="_blank">
+                        PEGAR OFERTA 50% OFF
+                    </a>
                 </div>
             </div>
         </div>
@@ -227,47 +273,66 @@
                     <span class="tipo-badge badge-ebook">E-BOOK</span>
                     <h2>B-A-BA DA ANÁLISE DA PERSONALIDADE PELOS PÉS</h2>
                     <p>Aprenda os fundamentos essenciais da análise da personalidade através dos pés. Ideal para iniciantes que desejam descobrir esta técnica fascinante.</p>
-                    <a href="https://chk.eduzz.com/1878274" class="btn-comprar btn-ebook" target="_blank">COMPRAR E-BOOK</a>
+                     <!-- Link e Botão Atualizados -->
+                    <a href="https://sun.eduzz.com/1878274?cupom=BLACKFRIDAY" class="btn-comprar btn-blackfriday" target="_blank">
+                        PEGAR OFERTA 50% OFF
+                    </a>
                 </div>
 
                 <div class="produto-card">
                     <span class="tipo-badge badge-ebook">E-BOOK</span>
                     <h2>OS ALIMENTOS E OS PÉS</h2>
                     <p>Descubra a conexão surpreendente entre alimentação e as características reveladas pelos pés. Uma abordagem única e holística.</p>
-                    <a href="https://chk.eduzz.com/1975089" class="btn-comprar btn-ebook" target="_blank">COMPRAR E-BOOK</a>
+                     <!-- Link e Botão Atualizados -->
+                    <a href="https://sun.eduzz.com/1975089?cupom=BLACKFRIDAY" class="btn-comprar btn-blackfriday" target="_blank">
+                        PEGAR OFERTA 50% OFF
+                    </a>
                 </div>
 
                 <div class="produto-card">
                     <span class="tipo-badge badge-ebook">E-BOOK</span>
                     <h2>O PODER DO PROCESSO CATÁRTICO</h2>
                     <p>Compreenda como o processo catártico pode transformar sua prática terapêutica e aprofundar suas sessões.</p>
-                    <a href="https://chk.eduzz.com/2042456" class="btn-comprar btn-ebook" target="_blank">COMPRAR E-BOOK</a>
+                     <!-- Link e Botão Atualizados -->
+                    <a href="https://sun.eduzz.com/2042456?cupom=BLACKFRIDAY" class="btn-comprar btn-blackfriday" target="_blank">
+                        PEGAR OFERTA 50% OFF
+                    </a>
                 </div>
 
                 <div class="produto-card">
                     <span class="tipo-badge badge-ebook">E-BOOK</span>
                     <h2>O PODER DA CUMPLICIDADE DENTRO DAS TERAPIAS CORPORAIS</h2>
                     <p>Desenvolva uma conexão profunda com seus clientes e potencialize os resultados das suas terapias corporais.</p>
-                    <a href="https://chk.eduzz.com/6W4VNYOA0Z" class="btn-comprar btn-ebook" target="_blank">COMPRAR E-BOOK</a>
+                     <!-- Link e Botão Atualizados -->
+                    <a href="https://sun.eduzz.com/6W4VNYOA0Z?cupom=BLACKFRIDAY" class="btn-comprar btn-blackfriday" target="_blank">
+                        PEGAR OFERTA 50% OFF
+                    </a>
                 </div>
 
                 <div class="produto-card">
                     <span class="tipo-badge badge-ebook">E-BOOK</span>
                     <h2>OS PÉS DA INOCÊNCIA AO EROTISMO</h2>
                     <p>Explore as diferentes dimensões da expressão humana através da análise dos pés, desde a inocência até aspectos mais profundos da personalidade.</p>
-                    <a href="https://chk.eduzz.com/KW8KJ28K01" class="btn-comprar btn-ebook" target="_blank">COMPRAR E-BOOK</a>
+                     <!-- Link e Botão Atualizados -->
+                    <a href="https://sun.eduzz.com/KW8KJ28K01?cupom=BLACKFRIDAY" class="btn-comprar btn-blackfriday" target="_blank">
+                        PEGAR OFERTA 50% OFF
+                    </a>
                 </div>
 
                 <div class="produto-card">
                     <span class="tipo-badge badge-ebook">E-BOOK</span>
                     <h2>O CÓDIGO KALI</h2>
                     <p>Desvende os mistérios deste método exclusivo e transforme sua compreensão sobre análise corporal e personalidade.</p>
-                    <a href="https://chk.eduzz.com/7WXQJYQ29A" class="btn-comprar btn-ebook" target="_blank">COMPRAR E-BOOK</a>
+                     <!-- Link e Botão Atualizados -->
+                    <a href="https://sun.eduzz.com/7WXQJYQ29A?cupom=BLACKFRIDAY" class="btn-comprar btn-blackfriday" target="_blank">
+                        PEGAR OFERTA 50% OFF
+                    </a>
                 </div>
             </div>
         </div>
 
         <footer>
+            <p>O desconto de 50% (cupom: <strong>BLACKFRIDAY</strong>) será aplicado na página de pagamento.</p>
             <p>Todos os produtos são oferecidos através da plataforma Eduzz</p>
             <p>Pagamento 100% seguro • Acesso imediato após aprovação</p>
         </footer>
