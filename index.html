@@ -3,339 +3,326 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔥 Black Friday 50% OFF - Cursos e E-books</title>
+    <title>Cursos e E-books | Irmo Zuccato Neto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap');
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            /* Fundo temático Black Friday */
-            background: #1a1a1a;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f3f4f6;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        h1, h2, h3, .font-heading {
+            font-family: 'Montserrat', sans-serif;
         }
 
-        header {
-            text-align: center;
-            padding: 40px 20px 60px;
-            color: white;
-        }
-
-        .logo {
-            width: 200px;
+        /* Efeito de Livro 3D com CSS Puro */
+        .book-cover {
+            position: relative;
+            width: 140px;
             height: 200px;
-            margin: 0 auto 20px;
-        }
-
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            /* Ajuste para logo em fundo escuro */
-            background: white;
-            border-radius: 50%;
-            padding: 10px;
-            box-shadow: 0 5px 25px rgba(255, 255, 255, 0.1);
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .autor {
-            font-size: 1.4em;
-            font-weight: bold;
-            margin-bottom: 15px;
-            opacity: 0.95;
-            letter-spacing: 1px;
-            color: #f0c400; /* Destaque amarelo */
-        }
-
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-
-        /* NOVO: Header de Black Friday */
-        .bf-header {
-            font-size: 2.2em;
-            font-weight: bold;
-            color: #f0c400; /* Amarelo Black Friday */
-            background-color: #333;
-            padding: 10px 20px;
-            border-radius: 10px;
-            display: inline-block;
-            margin-bottom: 30px;
-            border: 2px solid #f0c400;
-            animation: pulse-black 2s infinite;
-        }
-
-        @keyframes pulse-black {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(240, 196, 0, 0.7);
-            }
-            70% {
-                transform: scale(1.05);
-                box-shadow: 0 0 10px 20px rgba(240, 196, 0, 0);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(240, 196, 0, 0);
-            }
-        }
-
-
-        .secao {
-            margin: 40px 0;
-        }
-
-        .secao-titulo {
-            color: white;
-            font-size: 2em;
-            text-align: center;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .produtos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            padding: 20px 0;
-        }
-
-        .produto-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 4px 12px 12px 4px;
+            box-shadow: 
+                5px 5px 15px rgba(0,0,0,0.15), 
+                inset 3px 0px 5px rgba(255,255,255,0.2),
+                inset -10px 0px 20px rgba(0,0,0,0.1);
             display: flex;
             flex-direction: column;
-            position: relative;
-        }
-
-        .produto-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        .tipo-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.85em;
-        }
-
-        .badge-curso {
-            /* Cor original mantida */
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .badge-ebook {
-             /* Cor original mantida */
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-        }
-
-        .produto-card h2 {
-            color: #333; /* Cor escura para contrastar com branco */
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            margin-top: 25px;
-            min-height: 60px;
-        }
-
-        .produto-card p {
-            color: #666;
-            margin-bottom: 25px;
-            flex-grow: 1;
-        }
-
-        /* Botão Padrão (será sobrescrito) */
-        .btn-comprar {
-            display: inline-block;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 0 auto;
         }
 
-        /* NOVO: Botão Black Friday */
-        .btn-blackfriday {
-            background: linear-gradient(135deg, #333 0%, #000 100%);
-            box-shadow: 0 4px 15px rgba(240, 196, 0, 0.4);
-            border: 2px solid #f0c400;
-        }
-
-        .btn-blackfriday:hover {
-            transform: scale(1.05);
-            background: #f0c400;
-            color: #000;
-            box-shadow: 0 6px 20px rgba(240, 196, 0, 0.6);
-            border-color: #000;
-        }
-
-        .destaque {
-            border: 3px solid #f0c400; /* Amarelo */
-        }
-
-        .destaque::after {
-            content: "⭐ MAIS VENDIDO"; /* Alterado */
+        /* Lombada do livro */
+        .book-cover::before {
+            content: '';
             position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #f0c400;
-            color: #000;
-            padding: 5px 20px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9em;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 12px;
+            background: rgba(0,0,0,0.15);
+            border-radius: 4px 0 0 4px;
+            z-index: 10;
         }
 
-        footer {
-            text-align: center;
-            padding: 40px 20px;
+        .book-cover:hover {
+            transform: translateY(-5px) rotateY(-5deg);
+            box-shadow: 
+                8px 8px 20px rgba(0,0,0,0.2), 
+                inset 3px 0px 5px rgba(255,255,255,0.2);
+        }
+
+        .book-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.9rem;
+            line-height: 1.2;
             color: white;
-            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            z-index: 20;
+            margin-left: 8px; /* Compensar a lombada */
+        }
+        
+        .book-author {
+            font-size: 0.6rem;
+            color: rgba(255,255,255,0.9);
+            margin-top: auto;
+            margin-left: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-            .bf-header {
-                font-size: 1.5em;
-            }
-            .produtos {
-                grid-template-columns: 1fr;
-            }
+        .book-icon {
+            font-size: 2rem;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 10px;
+            margin-left: 8px;
+        }
+
+        /* Cores das Capas */
+        .cover-blue { background: linear-gradient(135deg, #1e3a8a, #3b82f6); }
+        .cover-purple { background: linear-gradient(135deg, #581c87, #a855f7); }
+        .cover-green { background: linear-gradient(135deg, #064e3b, #10b981); }
+        .cover-red { background: linear-gradient(135deg, #7f1d1d, #ef4444); }
+        .cover-orange { background: linear-gradient(135deg, #7c2d12, #f97316); }
+        .cover-teal { background: linear-gradient(135deg, #134e4a, #14b8a6); }
+        .cover-dark { background: linear-gradient(135deg, #1f2937, #4b5563); }
+        .cover-gold { background: linear-gradient(135deg, #713f12, #eab308); }
+
+        .btn-primary {
+            background: linear-gradient(to right, #2563eb, #1d4ed8);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <img src="https://raw.githubusercontent.com/irmoneto/Analisador-Personalidade-Pelos-P-s/main/IMAGENS%20APP/LOGO.jpg" alt="IZN - Análise dos Pés BNV">
-            </div>
-            
-            <!-- Título da Black Friday -->
-            <h2 class="bf-header">🔥 OFERTA BLACK FRIDAY 🔥</h2>
-            
-            <p class="autor">IRMO ZUCCATO NETO</p>
-            <h1>Cursos e E-books com 50% de Desconto</h1>
-            <p>Aproveite o cupom <strong>BLACKFRIDAY</strong>! Válido por tempo limitado.</p>
-        </header>
+<body class="text-gray-700">
 
-        <!-- CURSO -->
-        <div class="secao">
-            <h2 class="secao-titulo">📚 Curso Completo</h2>
-            <div class="produtos">
-                <div class="produto-card destaque">
-                    <span class="tipo-badge badge-curso">CURSO</span>
-                    <h2>MÓDULO BÁSICO – ANÁLISE DA PERSONALIDADE PELOS PÉS</h2>
-                    <p>Curso completo com toda a base necessária para começar a praticar a análise da personalidade pelos pés de forma profissional. Aprenda através de vídeo-aulas e material didático completo.</p>
-                    <!-- Link e Botão Atualizados -->
-                    <a href="https://sun.eduzz.com/2172958?cupom=BLACKFRIDAY" class="btn-comprar btn-blackfriday" target="_blank">
-                        PEGAR OFERTA 50% OFF
-                    </a>
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="https://raw.githubusercontent.com/irmoneto/Analisador-Personalidade-Pelos-P-s/main/IMAGENS%20APP/LOGO.jpg" alt="Logo IZN" class="h-10 w-10 rounded-full border border-gray-200">
+                <div>
+                    <h1 class="font-bold text-gray-800 leading-tight">Irmo Zuccato Neto</h1>
+                    <p class="text-xs text-blue-600 font-semibold uppercase tracking-wider">Loja Oficial</p>
+                </div>
+            </div>
+            <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition">
+                <i class="fas fa-arrow-left mr-1"></i> Voltar ao Site
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section / Curso Destaque -->
+    <section class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-16 px-4">
+        <div class="container mx-auto max-w-5xl">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <!-- Capa do Curso (Maior) -->
+                <div class="flex-shrink-0">
+                    <div class="book-cover cover-blue" style="width: 200px; height: 280px;">
+                        <i class="fas fa-graduation-cap book-icon" style="font-size: 3rem;"></i>
+                        <h2 class="book-title" style="font-size: 1.4rem;">MÓDULO BÁSICO</h2>
+                        <p class="text-sm text-blue-100 mt-2 ml-2">Análise da Personalidade</p>
+                        <span class="book-author">Irmo Zuccato Neto</span>
+                    </div>
+                </div>
+                
+                <div class="text-center md:text-left flex-1">
+                    <span class="inline-block bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full mb-4">
+                        ⭐ CURSO MAIS VENDIDO
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-4 leading-tight">
+                        Módulo Básico: Análise da Personalidade Pelos Pés
+                    </h2>
+                    <p class="text-blue-100 text-lg mb-6 leading-relaxed">
+                        A formação completa e essencial para quem deseja dominar a técnica. Aprenda a ler os sinais ocultos da personalidade através da neurociência, epigenética e traços de caráter.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="https://sun.eduzz.com/2172958" target="_blank" class="btn-primary bg-white text-blue-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg shadow-lg flex items-center justify-center gap-2">
+                            <span>Inscrever-se Agora</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-xs text-blue-300 opacity-80">
+                        <i class="fas fa-lock mr-1"></i> Pagamento seguro via Eduzz • Acesso Imediato
+                    </p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- E-BOOKS -->
-        <div class="secao">
-            <h2 class="secao-titulo">📖 E-books Exclusivos</h2>
-            <div class="produtos">
-                <div class="produto-card">
-                    <span class="tipo-badge badge-ebook">E-BOOK</span>
-                    <h2>B-A-BA DA ANÁLISE DA PERSONALIDADE PELOS PÉS</h2>
-                    <p>Aprenda os fundamentos essenciais da análise da personalidade através dos pés. Ideal para iniciantes que desejam descobrir esta técnica fascinante.</p>
-                     <!-- Link e Botão Atualizados -->
-                    <a href="https://sun.eduzz.com/1878274?cupom=BLACKFRIDAY" class="btn-comprar btn-blackfriday" target="_blank">
-                        PEGAR OFERTA 50% OFF
+    <!-- Seção de E-books -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Coleção de E-books</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto rounded"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                    Biblioteca completa para aprofundamento em temas específicos da análise corporal e desenvolvimento humano.
+                </p>
+            </div>
+
+            <!-- Grid de Produtos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                <!-- O CÓDIGO BONOBO (Novo) -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 p-6 flex flex-col items-center border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-3 right-3 bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">
+                        NOVO
+                    </div>
+                    <div class="mb-6 transform group-hover:scale-105 transition duration-300">
+                        <div class="book-cover cover-teal">
+                            <i class="fas fa-dna book-icon"></i>
+                            <h3 class="book-title">O CÓDIGO BONOBO</h3>
+                            <span class="book-author">Irmo Zuccato Neto</span>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-lg text-center mb-2 text-gray-800">O Código Bonobo</h3>
+                    <p class="text-sm text-gray-500 text-center mb-4 flex-1">
+                        Descubra os segredos do comportamento e da biologia evolutiva aplicados à personalidade.
+                    </p>
+                    <a href="https://chk.eduzz.com/69KA4EDV0O" target="_blank" class="w-full btn-primary text-white font-semibold py-2 px-4 rounded-lg text-center">
+                        Adquirir E-book
                     </a>
                 </div>
 
-                <div class="produto-card">
-                    <span class="tipo-badge badge-ebook">E-BOOK</span>
-                    <h2>OS ALIMENTOS E OS PÉS</h2>
-                    <p>Descubra a conexão surpreendente entre alimentação e as características reveladas pelos pés. Uma abordagem única e holística.</p>
-                     <!-- Link e Botão Atualizados -->
-                    <a href="https://sun.eduzz.com/1975089?cupom=BLACKFRIDAY" class="btn-comprar btn-blackfriday" target="_blank">
-                        PEGAR OFERTA 50% OFF
+                <!-- O CÓDIGO KALI -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 p-6 flex flex-col items-center border border-gray-100">
+                    <div class="mb-6 transform group-hover:scale-105 transition duration-300">
+                        <div class="book-cover cover-dark">
+                            <i class="fas fa-key book-icon"></i>
+                            <h3 class="book-title">O CÓDIGO KALI</h3>
+                            <span class="book-author">Irmo Zuccato Neto</span>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-lg text-center mb-2 text-gray-800">O Código Kali</h3>
+                    <p class="text-sm text-gray-500 text-center mb-4 flex-1">
+                        Desvende os mistérios deste método exclusivo e transforme sua compreensão sobre análise.
+                    </p>
+                    <a href="https://sun.eduzz.com/7WXQJYQ29A" target="_blank" class="w-full btn-primary text-white font-semibold py-2 px-4 rounded-lg text-center">
+                        Adquirir E-book
                     </a>
                 </div>
 
-                <div class="produto-card">
-                    <span class="tipo-badge badge-ebook">E-BOOK</span>
-                    <h2>O PODER DO PROCESSO CATÁRTICO</h2>
-                    <p>Compreenda como o processo catártico pode transformar sua prática terapêutica e aprofundar suas sessões.</p>
-                     <!-- Link e Botão Atualizados -->
-                    <a href="https://sun.eduzz.com/2042456?cupom=BLACKFRIDAY" class="btn-comprar btn-blackfriday" target="_blank">
-                        PEGAR OFERTA 50% OFF
+                <!-- B-A-BA -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 p-6 flex flex-col items-center border border-gray-100">
+                    <div class="mb-6 transform group-hover:scale-105 transition duration-300">
+                        <div class="book-cover cover-orange">
+                            <i class="fas fa-font book-icon"></i>
+                            <h3 class="book-title">O B-A-BA DA ANÁLISE</h3>
+                            <span class="book-author">Irmo Zuccato Neto</span>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-lg text-center mb-2 text-gray-800">O B-A-Bá da Análise</h3>
+                    <p class="text-sm text-gray-500 text-center mb-4 flex-1">
+                        Fundamentos essenciais. Ideal para iniciantes que desejam descobrir esta técnica.
+                    </p>
+                    <a href="https://sun.eduzz.com/1878274" target="_blank" class="w-full btn-primary text-white font-semibold py-2 px-4 rounded-lg text-center">
+                        Adquirir E-book
                     </a>
                 </div>
 
-                <div class="produto-card">
-                    <span class="tipo-badge badge-ebook">E-BOOK</span>
-                    <h2>O PODER DA CUMPLICIDADE DENTRO DAS TERAPIAS CORPORAIS</h2>
-                    <p>Desenvolva uma conexão profunda com seus clientes e potencialize os resultados das suas terapias corporais.</p>
-                     <!-- Link e Botão Atualizados -->
-                    <a href="https://sun.eduzz.com/6W4VNYOA0Z?cupom=BLACKFRIDAY" class="btn-comprar btn-blackfriday" target="_blank">
-                        PEGAR OFERTA 50% OFF
+                <!-- Alimentos e Pés -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 p-6 flex flex-col items-center border border-gray-100">
+                    <div class="mb-6 transform group-hover:scale-105 transition duration-300">
+                        <div class="book-cover cover-green">
+                            <i class="fas fa-apple-alt book-icon"></i>
+                            <h3 class="book-title">ALIMENTOS E OS PÉS</h3>
+                            <span class="book-author">Irmo Zuccato Neto</span>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-lg text-center mb-2 text-gray-800">Os Alimentos e os Pés</h3>
+                    <p class="text-sm text-gray-500 text-center mb-4 flex-1">
+                        Conexão surpreendente entre alimentação e características físicas.
+                    </p>
+                    <a href="https://sun.eduzz.com/1975089" target="_blank" class="w-full btn-primary text-white font-semibold py-2 px-4 rounded-lg text-center">
+                        Adquirir E-book
                     </a>
                 </div>
 
-                <div class="produto-card">
-                    <span class="tipo-badge badge-ebook">E-BOOK</span>
-                    <h2>OS PÉS DA INOCÊNCIA AO EROTISMO</h2>
-                    <p>Explore as diferentes dimensões da expressão humana através da análise dos pés, desde a inocência até aspectos mais profundos da personalidade.</p>
-                     <!-- Link e Botão Atualizados -->
-                    <a href="https://sun.eduzz.com/KW8KJ28K01?cupom=BLACKFRIDAY" class="btn-comprar btn-blackfriday" target="_blank">
-                        PEGAR OFERTA 50% OFF
+                <!-- Processo Catártico -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 p-6 flex flex-col items-center border border-gray-100">
+                    <div class="mb-6 transform group-hover:scale-105 transition duration-300">
+                        <div class="book-cover cover-purple">
+                            <i class="fas fa-brain book-icon"></i>
+                            <h3 class="book-title">PROCESSO CATÁRTICO</h3>
+                            <span class="book-author">Irmo Zuccato Neto</span>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-lg text-center mb-2 text-gray-800">O Poder do Processo Catártico</h3>
+                    <p class="text-sm text-gray-500 text-center mb-4 flex-1">
+                        Transforme sua prática terapêutica e aprofunde suas sessões.
+                    </p>
+                    <a href="https://sun.eduzz.com/2042456" target="_blank" class="w-full btn-primary text-white font-semibold py-2 px-4 rounded-lg text-center">
+                        Adquirir E-book
                     </a>
                 </div>
 
-                <div class="produto-card">
-                    <span class="tipo-badge badge-ebook">E-BOOK</span>
-                    <h2>O CÓDIGO KALI</h2>
-                    <p>Desvende os mistérios deste método exclusivo e transforme sua compreensão sobre análise corporal e personalidade.</p>
-                     <!-- Link e Botão Atualizados -->
-                    <a href="https://sun.eduzz.com/7WXQJYQ29A?cupom=BLACKFRIDAY" class="btn-comprar btn-blackfriday" target="_blank">
-                        PEGAR OFERTA 50% OFF
+                <!-- Cumplicidade -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 p-6 flex flex-col items-center border border-gray-100">
+                    <div class="mb-6 transform group-hover:scale-105 transition duration-300">
+                        <div class="book-cover cover-gold">
+                            <i class="fas fa-hands-helping book-icon"></i>
+                            <h3 class="book-title">PODER DA CUMPLICIDADE</h3>
+                            <span class="book-author">Irmo Zuccato Neto</span>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-lg text-center mb-2 text-gray-800">Cumplicidade nas Terapias</h3>
+                    <p class="text-sm text-gray-500 text-center mb-4 flex-1">
+                        Desenvolva conexões profundas e potencialize resultados terapêuticos.
+                    </p>
+                    <a href="https://sun.eduzz.com/6W4VNYOA0Z" target="_blank" class="w-full btn-primary text-white font-semibold py-2 px-4 rounded-lg text-center">
+                        Adquirir E-book
                     </a>
                 </div>
+
+                <!-- Inocência ao Erotismo -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 p-6 flex flex-col items-center border border-gray-100">
+                    <div class="mb-6 transform group-hover:scale-105 transition duration-300">
+                        <div class="book-cover cover-red">
+                            <i class="fas fa-heart book-icon"></i>
+                            <h3 class="book-title">DA INOCÊNCIA AO EROTISMO</h3>
+                            <span class="book-author">Irmo Zuccato Neto</span>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-lg text-center mb-2 text-gray-800">Pés: Da Inocência ao Erotismo</h3>
+                    <p class="text-sm text-gray-500 text-center mb-4 flex-1">
+                        Explore as diferentes dimensões da expressão humana através dos pés.
+                    </p>
+                    <a href="https://sun.eduzz.com/KW8KJ28K01" target="_blank" class="w-full btn-primary text-white font-semibold py-2 px-4 rounded-lg text-center">
+                        Adquirir E-book
+                    </a>
+                </div>
+
             </div>
         </div>
+    </section>
 
-        <footer>
-            <p>O desconto de 50% (cupom: <strong>BLACKFRIDAY</strong>) será aplicado na página de pagamento.</p>
-            <p>Todos os produtos são oferecidos através da plataforma Eduzz</p>
-            <p>Pagamento 100% seguro • Acesso imediato após aprovação</p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-10 mt-10">
+        <div class="container mx-auto px-4 text-center">
+            <img src="https://raw.githubusercontent.com/irmoneto/Analisador-Personalidade-Pelos-P-s/main/IMAGENS%20APP/LOGO.jpg" alt="Logo" class="h-16 w-16 rounded-full mx-auto mb-4 border-2 border-gray-600 opacity-80">
+            <p class="mb-4 text-sm max-w-md mx-auto">
+                Desenvolvendo pessoas através do autoconhecimento profundo e da ciência corporal.
+            </p>
+            <div class="text-sm space-y-2">
+                <p>&copy; 2025 Irmo Zuccato Neto. Todos os direitos reservados.</p>
+                <p class="text-gray-500 text-xs">
+                    Os produtos são entregues digitalmente pela plataforma Eduzz.
+                </p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
